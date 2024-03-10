@@ -1,17 +1,29 @@
-import { api } from '@/services/api';
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, View } from 'react-native';
 
-// import {} from '@/';
+import { Loading } from '@/components/Loading';
+import { MemberCard } from '@/components/MemberCard';
+
+import { Member } from '@/services/requests/clan/types';
+import { getClansMembersByClanTagRequest } from '@/services/requests/clan';
 
 export default function Home() {
-  const [members, setMembers] = useState<any[]>([]);
+  const [members, setMembers] = useState<Member[]>([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     async function loadMembers() {
-      const response = await api.get('clans/%232YUOLPOYO/members');
+      setLoading(true);
+      try {
+        const response = await getClansMembersByClanTagRequest('%232YUOLPOYO');
 
-      if (response.status === 200) {
-        setMembers(response?.data?.items);
+        if (response.status === 200) {
+          setMembers(response?.data?.items);
+        }
+      } catch (error) {
+        console.log('Error loadMembers =>', error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -19,15 +31,20 @@ export default function Home() {
   }, []);
 
   return (
-    <View className='flex-1 bg-gray-800 items-center justify-center'>
-      <Text className='text-white'>Home</Text>
+    <SafeAreaView className='flex-1 bg-gray-800 items-center justify-center p-3'>
+      <Text className='text-white mb-2'>Membros</Text>
 
-      {members &&
-        members?.map((m: any) => (
-          <Text className='text-white' key={m?.name}>
-            {m?.name}
-          </Text>
-        ))}
-    </View>
+      {loading ? (
+        <Loading />
+      ) : (
+        <FlatList
+          data={members}
+          keyExtractor={(item) => item.tag}
+          renderItem={({ item }) => <MemberCard member={item} />}
+          className='flex-1 w-full h-full bg-gray-800 px-3'
+          showsVerticalScrollIndicator={false}
+        />
+      )}
+    </SafeAreaView>
   );
 }
