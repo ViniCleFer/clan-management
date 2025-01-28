@@ -1,0 +1,48 @@
+{
+  "cli": {
+    "version": ">= 3.7.2"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "android": {
+        "gradleCommand": ":app:assembleDebug",
+        "buildType": "apk"
+      },
+      "ios": {
+        "resourceClass": "m1-medium",
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_COC_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjA0YWI2MGU2LTMxODAtNDUwYy05MDBhLWQzMjU5MTA3MGI2MyIsImlhdCI6MTcwODI4NjUyNSwic3ViIjoiZGV2ZWxvcGVyLzRjMDVjOGQ4LWZjMmQtOTllMi02NjYzLWY4NGI0NDNkNzk5MiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE3OS4yMzUuNTEuMTI4Il0sInR5cGUiOiJjbGllbnQifV19.6IRGbgj7ur_DUQdL2Otp1zpvBhdPql0VBb-bD7MsYX6qlsme8VswqwA-yaA3jmprBblkFdILiwUdrw1tu0ix9Q"
+      },
+      "channel": "development"
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m1-medium",
+        "enterpriseProvisioning": "universal"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_COC_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjA0YWI2MGU2LTMxODAtNDUwYy05MDBhLWQzMjU5MTA3MGI2MyIsImlhdCI6MTcwODI4NjUyNSwic3ViIjoiZGV2ZWxvcGVyLzRjMDVjOGQ4LWZjMmQtOTllMi02NjYzLWY4NGI0NDNkNzk5MiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE3OS4yMzUuNTEuMTI4Il0sInR5cGUiOiJjbGllbnQifV19.6IRGbgj7ur_DUQdL2Otp1zpvBhdPql0VBb-bD7MsYX6qlsme8VswqwA-yaA3jmprBblkFdILiwUdrw1tu0ix9Q"
+      },
+      "channel": "preview"
+    },
+    "production": {
+      "ios": {
+        "resourceClass": "m1-medium"
+      },
+      "env": {
+        "EXPO_PUBLIC_COC_KEY": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjA0YWI2MGU2LTMxODAtNDUwYy05MDBhLWQzMjU5MTA3MGI2MyIsImlhdCI6MTcwODI4NjUyNSwic3ViIjoiZGV2ZWxvcGVyLzRjMDVjOGQ4LWZjMmQtOTllMi02NjYzLWY4NGI0NDNkNzk5MiIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE3OS4yMzUuNTEuMTI4Il0sInR5cGUiOiJjbGllbnQifV19.6IRGbgj7ur_DUQdL2Otp1zpvBhdPql0VBb-bD7MsYX6qlsme8VswqwA-yaA3jmprBblkFdILiwUdrw1tu0ix9Q"
+      },
+      "channel": "production"
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
